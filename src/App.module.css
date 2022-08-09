@@ -1,0 +1,39 @@
+.loadingSection {
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #000;
+}
+
+.loadingSection > * {
+  width: 90%;
+  text-align: center;
+}
+
+.cardSection {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: hsl(207, 19%, 9%);
+}
+
+
+.formsSection {
+  color: white;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: #1d2b3a;
+}
