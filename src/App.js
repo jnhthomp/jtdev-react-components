@@ -50,18 +50,18 @@ function App() {
   }
   return (
     <div className="App">
-      <section className={classes.loadingSection}>
+      <section className={`${classes.sectionContainer} ${classes.loadingSection}`}>
         <h2>Loading Bars</h2>
         <GlowBar settings={{}}/>
         <GlowBar settings={glowBarSettings}/>
       </section>
-      <section className={classes.cardSection}>
+      <section className={`${classes.sectionContainer} ${classes.cardSection}`}>
         <FullImageCard settings={{}}/>
         <FullImageCard 
           settings={fullImageCardSettings}
         />
       </section>
-      <section className={classes.formsSection}>
+      <section className={`${classes.sectionContainer} ${classes.formsSection}`}>
         <h1>Forms and Input</h1>
         <AnimatedInput settings={{}}/>
         <AnimatedInput 

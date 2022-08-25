@@ -1,11 +1,18 @@
-.loadingSection {
-  color: white;
+.sectionContainer {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 30px
+}
+
+.buttonSection {
+  background-color: hsl(323 21% 16%);
+}
+
+.loadingSection {
+  color: white;
   background-color: #000;
 }
 
@@ -15,12 +22,6 @@
 }
 
 .cardSection {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 30px;
   background-color: hsl(207, 19%, 9%);
 }
 
@@ -29,7 +30,6 @@
   color: white;
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
