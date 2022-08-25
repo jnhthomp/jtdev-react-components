@@ -2,9 +2,20 @@ import classes from './App.module.css';
 import GlowBar from './Loading/GlowBar/GlowBar.jsx';
 import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
+import NeonButton from './Button/NeonButton/NeonButton';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 function App() {
+
+  // Neon Button example settings
+  const neonButtonSettings = {
+    color: '#7deddc',
+    colorBg: `#007ba7`,
+    fontSize: '3rem',
+    transitionSpeed: 500,
+    clickAction: () => console.log('Custom Click')
+  }
+
   // Glow Bar loader example settings
   // Replace GlowBar settings prop with this object to see customization examples
   const glowBarSettings = {
@@ -50,6 +61,12 @@ function App() {
   }
   return (
     <div className="App">
+      <section className={`${classes.sectionContainer} ${classes.buttonSection}`}>
+        <NeonButton settings={{}}>Text</NeonButton>
+        <br></br>
+        <NeonButton 
+          settings={neonButtonSettings}>Button</NeonButton>
+      </section>
       <section className={`${classes.sectionContainer} ${classes.loadingSection}`}>
         <h2>Loading Bars</h2>
         <GlowBar settings={{}}/>
