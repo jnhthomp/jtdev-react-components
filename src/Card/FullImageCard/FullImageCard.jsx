@@ -167,7 +167,6 @@ const FullImageCard = (props) => {
   }
 
   importSettings();
-  console.log(finalSettings)
   
   return (
     <Card settings={finalSettings}>
