@@ -3,6 +3,7 @@ import GlowBar from './Loading/GlowBar/GlowBar.jsx';
 import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
 import NeonButton from './Button/NeonButton/NeonButton';
+import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 function App() {
@@ -14,6 +15,13 @@ function App() {
     fontSize: '3rem',
     transitionSpeed: 500,
     clickAction: () => console.log('Custom Click')
+  }
+
+  const neonButtonAnimatedSettings = { 
+    colorPrimary: '#ef3e9c', 
+    colorSecondary: '#aaffb8',
+    fontSize: '16px',
+    transitionSpeed: .5
   }
 
   // Glow Bar loader example settings
@@ -66,6 +74,9 @@ function App() {
         <br></br>
         <NeonButton 
           settings={neonButtonSettings}>Button</NeonButton>
+        <br></br>
+        <NeonButtonAnimated settings={{}}>Standard</NeonButtonAnimated>
+        <NeonButtonAnimated settings={neonButtonAnimatedSettings}>Custom</NeonButtonAnimated>
       </section>
       <section className={`${classes.sectionContainer} ${classes.loadingSection}`}>
         <h2>Loading Bars</h2>
