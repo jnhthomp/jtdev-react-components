@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# JTDev Component Library
+<a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://jtdev-asset-server.herokuapp.com/assets/images/JTDEV-MDHead.png" alt="JTDEV" width="100%" height="auto"/> </a>
+This application was created to act as a library of customizable and reusable components. As I build applications and find interesting components I will continue to add them to this project. As more components are added this will speed up development of unique looking apps as I will be able to simply drop these components into an application and use React context or a theme engine to quickly change the look of all components at once.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- TODO: Add gif of application -->
+<!-- Application gif -->
+<!-- <a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://drive.google.com/uc?id=1nQ9bFzzWO1Iuq6pjtcWAZR-Y5H_3rIxw" alt="JTDEV" width="100%" height="auto" /> </a>  -->
 
-## Available Scripts
+## How It's Made:
+## How It's Made:
+**Tech used:** <!--JavaSCript =>--><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <!-- Node.js =>--><a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <!-- React =>--><a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="reactjs" width="40" height="40"/> </a>
 
-In the project directory, you can run:
+This is a React application that utilizes Styled Components to apply dynamic styles to each component and Material Icons for clean svg images.
 
-### `npm start`
+## How to install/use:
+1. Clone/Fork the repository
+2. Use `$npm install` to install all dependencies and `$npm start` to view
+3. Copy desired component files into whatever project you need them in
+4. Theme components in your application using examples provided in App.js or leave default styles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Optimizations
+- Use theme provider to supply custom values as an alternative to a settings object. This should reduce code duplication when using multiple components in an app and make plug/play easier for applications already using Theme Provider.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Lessons Learned
+- Many CSS tips and tricks within each component such as animations, sizing, and responsiveness.
 
-### `npm test`
+## Resources
+- <a href="https://www.youtube.com/kepowob">Kevin Powell</a> and <a href="https://www.youtube.com/c/OnlineTutorials4Designers">Online Tutorials</a> have been awesome resources for design and information. I will try to leave links to videos I used for specific components inside of the component files themselves.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Other Examples:
+Take a look at other examples from my <a href="https://jtdev.netlify.app/">portfolio</a> using the lessons learned from these classes:
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Blog Site W/ Categories and Authentification:** https://github.com/jnhthomp/alpha-blog2
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Stock Based Social Network:** https://github.com/jnhthomp/finance-tracker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Restaurant Web-Based Ordering System:** https://github.com/jnhthomp/practice-food-order-app
