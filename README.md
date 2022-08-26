@@ -7,7 +7,6 @@ This application was created to act as a library of customizable and reusable co
 <!-- <a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://drive.google.com/uc?id=1nQ9bFzzWO1Iuq6pjtcWAZR-Y5H_3rIxw" alt="JTDEV" width="100%" height="auto" /> </a>  -->
 
 ## How It's Made:
-## How It's Made:
 **Tech used:** <!--JavaSCript =>--><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <!-- Node.js =>--><a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <!-- React =>--><a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="reactjs" width="40" height="40"/> </a>
 
 This is a React application that utilizes Styled Components to apply dynamic styles to each component and Material Icons for clean svg images.
