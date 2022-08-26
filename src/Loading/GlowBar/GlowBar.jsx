@@ -81,6 +81,8 @@ const GlowBar = (props) => {
 
 export default GlowBar;
 
+// Source: https://www.youtube.com/watch?v=rdtTCVzTwSQ
+
 /**
  * To use:
  *  1. Ensure that npm package 'styled-components' is installed to your react app

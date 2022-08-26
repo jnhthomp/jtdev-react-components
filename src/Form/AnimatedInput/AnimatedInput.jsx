@@ -127,6 +127,8 @@ const AnimatedInput = (props) => {
 
 export default AnimatedInput
 
+// Source: https://www.youtube.com/watch?v=BMphVl9suxA
+
 /**
  * To Use:
  *  1. Ensure that npm package 'styled-components' is installed to your react app

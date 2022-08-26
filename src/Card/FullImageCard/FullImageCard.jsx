@@ -181,6 +181,7 @@ const FullImageCard = (props) => {
 
 export default FullImageCard
 
+// Source: https://www.youtube.com/watch?v=5DEq5cWNYt8
 
 /**
  * To Use:
