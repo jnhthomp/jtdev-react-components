@@ -23,7 +23,7 @@ const Loader = styled.div`
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, 
-    ${((props) => props.loaderSettings.loaderColors.reduce((acc, color, i) => i !== 0 && i !== 1 ? acc + `, ${color}` : color, '').concat(`, ${props.loaderSettings.loaderColors[1]}`))});
+    ${((props) => props.loaderSettings.loaderColors().reduce((acc, color, i) => i !== 0 && i !== 1 ? acc + `, ${color}` : color, '').concat(`, ${props.loaderSettings.loaderColors()[1]}`))});
   animation: animate ${(props) => props.loaderSettings.animationSpeed + 's'} linear infinite;
   background-size: ${(props) => props.loaderSettings.loaderColorsSize + '%'};
   filter: blur(${(props) => props.loaderSettings.blurSize});
@@ -41,36 +41,16 @@ const Loader = styled.div`
 `
 
 const GlowBar = (props) => {
-  const finalSettings = {}
-  const importSettings = () => {
-    
-
-    finalSettings.loaderColorsRepeat = props.settings.loaderColorsRepeat ?
-      props.settings.loaderColorsRepeat :
-      3
-
-    finalSettings.loaderColors = props.settings.loaderColors ? 
+  const finalSettings = {
+    loaderColorsRepeat: props.settings.loaderColorsRepeat || 3,
+    loaderColors: () => props.settings.loaderColors ? 
       props.settings.loaderColors.join('').repeat(finalSettings.loaderColorsRepeat).split('#').map((el) => el !== '' ? `#${el}` : el) : 
-      ['#fb0094', '#0000ff', '#00ff00', '#ffff00'].join('').repeat(finalSettings.loaderColorsRepeat).split('#').map((el) => el !== '' ? `#${el}`: el)
-    
-    finalSettings.loaderColorsSize = props.settings.loaderColorsSize ?
-      props.settings.loaderColorsSize :
-      400
-    
-    finalSettings.animationSpeed = props.settings.animationSpeed ?
-      props.settings.animationSpeed :
-      20
-
-    finalSettings.height = props.settings.height ?
-      props.settings.height :
-      10
-
-    finalSettings.blurSize = props.settings.blurSize ?
-      `${props.settings.blurSize}px` :
-      `${10}px`
+      ['#fb0094', '#0000ff', '#00ff00', '#ffff00'].join('').repeat(finalSettings.loaderColorsRepeat).split('#').map((el) => el !== '' ? `#${el}` : el),
+    loaderColorsSize: props.settings.loaderColorsSize || 400,
+    animationSpeed: props.settings.animationSpeed || 20,
+    height: props.settings.height || 10,
+    blurSize: () => props.settings.blurSize ? `${props.settings.blurSize}px` : `${10}px`
   }
-
-  importSettings()
   
   return (
     <LoaderContainer>

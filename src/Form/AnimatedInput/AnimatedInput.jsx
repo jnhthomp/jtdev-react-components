@@ -66,54 +66,19 @@ const AnimatedInput = (props) => {
   // border radius
   // Initial text color
   // alt classname (background required to apply text color)
-  const finalSettings = {}
-  const importSettings = () => {
-    finalSettings.type = props.settings.type ?
-      props.settings.type :
-      'text'
-    
-    finalSettings.label = props.settings.label ?
-      props.settings.label :
-      'label'
-
-    finalSettings.width = props.settings.width ? 
-      props.settings.width:
-      '300px'
-
-    finalSettings.colorBackground = props.settings.colorBackground ?
-      props.settings.colorBackground :
-      'inherit'
-    
-    finalSettings.colorAccent = props.settings.colorAccent ?
-      props.settings.colorAccent :
-      '#00dfc4'
-    
-    finalSettings.colorMain = props.settings.colorMain ?
-      props.settings.colorMain :
-      'rgba(255, 255, 255, 0.25)'
-
-    finalSettings.colorText = props.settings.colorText ?
-      props.settings.colorText :
-      '#fff'
-
-    finalSettings.animationSpeed = props.settings.animationSpeed ?
-      props.settings.animationSpeed :
-      .5
-
-    finalSettings.textTransform = props.settings.textTransform ?
-      props.settings.textTransform :
-      'none'
-    
-    finalSettings.labelSpacing = props.settings.labelSpacing ?
-      props.settings.labelSpacing :
-      '.2em'
-
-    finalSettings.useAltTheme = props.settings.useAltTheme ?
-      props.settings.useAltTheme :
-      false
-  } 
-
-  importSettings()
+  const finalSettings = {
+    type: props.settings.type || 'text',
+    label: props.settings.label || 'label',
+    width: props.settings.width || '300px',
+    colorBackground: props.settings.colorBackground || 'inherit',
+    colorAccent: props.settings.colorAccent || '#00dfc4',
+    colorMain: props.settings.colorMain || 'rgba(255, 255, 255, 0.25)',
+    colorText: props.settings.colorText || '#fff',
+    animationSpeed: props.settings.animationSpeed || .5,
+    textTransform: props.settings.textTransform || 'none',
+    labelSpacing: props.settings.labelSpacing || '.2em',
+    useAltTheme: props.settings.useAltTheme || false
+  }
 
   const altLabelClass = finalSettings.useAltTheme ? 'alt' : ''
   
