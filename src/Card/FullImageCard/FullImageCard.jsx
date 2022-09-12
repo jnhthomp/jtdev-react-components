@@ -18,7 +18,7 @@ const Card = styled.div`
   &:hover .title:after,
   &:focus-within .title:after{
     transform: scaleX(1);
-    bottom: ${(props) => props.settings.barUpperPadding};
+    bottom: ${(props) => props.settings.barUpperPadding()};
   }
 
   &:hover .content,
