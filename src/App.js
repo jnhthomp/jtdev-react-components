@@ -4,7 +4,12 @@ import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
 import NeonButton from './Button/NeonButton/NeonButton';
 import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
+import GlitchText from './TextEffect/GlitchText/GlitchText';
 // import image from './Assets/Images/JWSTHD.jpg';
+
+// TODO: Update settings import for all components.
+//  Should initialize values on object creation and not require a special function
+//  This is cleaner, probably faster, and much easier to read.
 
 function App() {
 
@@ -67,6 +72,16 @@ function App() {
     labelSpacing: '.4em',
     useAltTheme: true
   }
+
+  const glitchTextSettings = {
+    color: 'white',
+    fontSize: '6rem',
+    fontWeight: 500,
+    rColor: 'rgba(146, 0, 134, .75)', // .75 opacity recommended but not required
+    gColor: 'rgba(183, 253, 227, .75)', // .75 opacity recommended but not required
+    bColor: 'rgba(50, 70, 146, .75)', // .75 opacity recommended but not required
+  }
+  
   return (
     <div className="App">
       <section className={`${classes.sectionContainer} ${classes.buttonSection}`}>
@@ -95,6 +110,10 @@ function App() {
         <AnimatedInput 
           settings={animatedInputSettings}
         />
+      </section>
+      <section className={`${classes.sectionContainer} ${classes.textEffectSection}`}>
+        <GlitchText settings={{}}>Glitch</GlitchText>
+        <GlitchText settings={glitchTextSettings}>Custom</GlitchText>
       </section>
     </div>
   );
