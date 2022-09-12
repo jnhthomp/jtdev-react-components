@@ -97,83 +97,37 @@ const CardButton = styled.a`
   }
 `
 const FullImageCard = (props) => {
+  const defaultClick = () => console.log('clicked')
 
-  const finalSettings = {};
+  const finalSettings = {
+    backgroundImage: props.settings.backgroundImage || '/logo512.png', // Default to image included with 'create-react-app',
+    maxWidth: props.settings.maxWidth || '35ch',
+    animationSpeed: props.settings.animationSpeed || '500ms',
+    sacleUp: props.settings.scaleUp || 1.05,
+    barUpperPadding: () => props.settings.barUpperPadding ? (props.settings.barUpperPadding * -1) + 'px' : -3 + 'px',
+    padding: props.settings.padding || '1.5rem',
+    titleColor: props.settings.titleColor || '#fff',
+    // buttonTextColor: props.settings.buttonTextColor || finalSettings.titleColor,
+    bodyColor: props.settings.bodyColor || 'rgba(255, 255, 255, .8)',
+    barHeight: props.settings.barHeight || '3px',
+    accentColor: props.settings.accentColor || 'hsl(142, 90%, 61%)',
+    cardTitle: props.settings.cardTitle || 'Card Title',
+    cardBody: props.settings.cardBody || 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas eius illum veritatis, explicabo autem quis molestias',
+    cardButtonText: props.settings.cardButtonText || 'Learn More',
+    // cardButtonPrimaryColor: props.settings.cardButtonPrimaryColor || finalSettings.accentColor,
+    cardButtonSecondaryColor: props.settings.cardButtonSecondaryColor || '#fff',
+    buttonAction: props.settings.buttonAction || defaultClick
+  };
 
-  const importSettings = () => {
-    finalSettings.backgroundImage = props.settings.backgroundImage ?
-      props.settings.backgroundImage :
-      '/logo512.png' // Default to image included with 'create-react-app'
-    
-    finalSettings.maxWidth = props.settings.maxWidth ?
-      props.settings.maxWidth :
-      '35ch'
-
-    finalSettings.animationSpeed = props.settings.animationSpeed ?
-      props.settings.animationSpeed + 'ms':
-      '500ms'
-
-    finalSettings.scaleUp = props.settings.scaleUp ?
-      props.settings.scaleUp :
-      1.05
-
-    finalSettings.barUpperPadding = props.settings.barUpperPadding ?
-      (props.settings.barUpperPadding * -1) + 'px':
-      -3 + 'px';
-    
-    finalSettings.padding = props.settings.padding ?
-      props.settings.padding :
-      '1.5rem'
-
-    finalSettings.titleColor = props.settings.titleColor ?
-      props.settings.titleColor :
-      '#fff'
-
-    finalSettings.buttonTextColor = props.settings.buttonTextColor ?
-      props.settings.buttonTextColor :
-      finalSettings.titleColor
-
-    finalSettings.bodyColor = props.settings.bodyColor ?
-      props.settings.bodyColor :
-      'rgba(255, 255, 255, .8)'
-
-    finalSettings.barHeight = props.settings.barHeight ?
-      props.settings.barHeight :
-      '3px'
-
-    finalSettings.accentColor = props.settings.accentColor ?
-      props.settings.accentColor :
-      'hsl(142, 90%, 61%)'
-
-    finalSettings.cardTitle = props.settings.cardTitle ?
-      props.settings.cardTitle :
-      'Card Title'
-
-    finalSettings.cardBody = props.settings.cardBody ? 
-      props.settings.cardBody :
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas eius illum veritatis, explicabo autem quis molestias'
-    
-    finalSettings.cardButtonText = props.settings.cardButtonText ?
-      props.settings.cardButtonText :
-      'Learn More'
-    
-    finalSettings.cardButtonPrimaryColor = props.settings.cardButtonPrimaryColor ?
-      props.settings.cardButtonPrimaryColor :
-      finalSettings.accentColor
-    
-    finalSettings.cardButtonSecondaryColor = props.settings.cardButtonSecondaryColor ?
-      props.settings.cardButtonSecondaryColor :
-      '#fff'
-  }
-
-  importSettings();
+  finalSettings.buttonTextColor = props.settings.buttonTextColor || finalSettings.titleColor
+  finalSettings.cardButtonPrimaryColor = props.settings.cardButtonPrimaryColor || finalSettings.accentColor
   
   return (
     <Card settings={finalSettings}>
       <CardContent settings={finalSettings} className="content">
         <CardTitle settings={finalSettings} className="title">{finalSettings.cardTitle}</CardTitle>
         <CardBody settings={finalSettings}>{finalSettings.cardBody}</CardBody>
-        <CardButton settings={finalSettings} href="#">{finalSettings.cardButtonText}</CardButton>
+        <CardButton settings={finalSettings} onClick={finalSettings.buttonAction}>{finalSettings.cardButtonText}</CardButton>
       </CardContent>
     </Card>
   )
@@ -206,7 +160,8 @@ export default FullImageCard
  *          cardBody: 'Here you can add custom text for the card. You should keep it relatively short.', // text to display in body
  *          cardButtonText: 'Click Here', // Text to display in button
  *%         // cardButtonPrimaryColor: '', // set to match accentColor if no value given
- *          cardButtonSecondaryColor: '#25cf51' // Color to change background to on card hover
+ *          cardButtonSecondaryColor: '#25cf51' // Color to change background to on card hover,
+ *          buttonAction: () => console.log('Custom click') // action to execute on button click
  *        }}
  *      />
  */
