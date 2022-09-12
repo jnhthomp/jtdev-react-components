@@ -94,28 +94,18 @@ const Button = styled.button`
 `
 
 const NeonButtonAnimated = (props) => {
-  const finalSettings = {};
-  const importSettings = () =>{
-    finalSettings.colorPrimary = props.settings.colorPrimary ?
-      props.settings.colorPrimary :
-      '#2196f3'
+  const defaultClick = () => console.log('clicked')
 
-    finalSettings.colorSecondary = props.settings.colorSecondary ?
-      props.settings.colorSecondary :
-      '#255784'
-
-    finalSettings.fontSize = props.settings.fontSize ?
-      props.settings.fontSize :
-      '24px'
-
-    finalSettings.transitionSpeed = props.settings.transitionSpeed ?
-      props.settings.transitionSpeed :
-      1
+  const finalSettings = {
+    colorPrimary: props.settings.colorPrimary || '#2196f3',
+    colorSecondary: props.settings.colorSecondary || '#255784',
+    fontSize: props.settings.fontSize || '24px',
+    transitionSpeed: props.settings.transitionSpeed || 1,
+    clickAction: props.settings.clickAction || defaultClick
   };
 
-  importSettings()
   return (
-    <Button buttonSettings={finalSettings}>
+    <Button buttonSettings={finalSettings} onClick={finalSettings.clickAction}>
       <span></span>
       <span></span>
       <span></span>
