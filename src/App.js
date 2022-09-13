@@ -5,6 +5,7 @@ import FullImageCard from './Card/FullImageCard/FullImageCard';
 import NeonButton from './Button/NeonButton/NeonButton';
 import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
+import TypewriterText from './TextEffect/TypewriterText/TypewriterText';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 // TODO: Update settings import for all components.
@@ -83,6 +84,30 @@ function App() {
     gColor: 'rgba(183, 253, 227, .75)', // .75 opacity recommended but not required
     bColor: 'rgba(50, 70, 146, .75)', // .75 opacity recommended but not required
   }
+
+  const typewriterTextSettings = {
+    showSubtitle: true, 
+    titleContent: 'Custom Typewriter Text.', // Can be assigned here or passed as child
+    subtitleContent: 'Optional customizable subtitle',
+    // !titleFont! Must be monospace; 
+    // !titleFont & subtitleFont! 
+    // !  Include the link listed within the component to get correct font; 
+    // !  To specify a downloadable font include the link in your index.html file
+    titleFont: '\'Roboto Mono\', monospace', 
+    subtitleFont: '\'Montserrat\', sans-serif',
+    titleColor: '#ab80a7',
+    subtitleColor: 'rgba(234, 163, 130, .75)',
+    titleWeight: 200,
+    subtitleWeight: 100,
+    titleFontSize: '4rem',
+    subtitleFontSize: '3rem',
+    typeTime: 6000, // ! in ms & must be integer
+    blinkTime: '750ms',
+    typeDelay: 1500, // ! in ms & must be integer
+    subtitleDelay: 1000, // ! in ms & must be integer
+    background: '#bfe7ff', // !required property unless using white background
+    // caretColor: 'white' // Recommend to not use to match text color but wanted to give the option
+  }
   
   return (
     <div className="App">
@@ -113,6 +138,8 @@ function App() {
         <h1>Text Effects</h1>
         <GlitchText settings={{}}>Glitch</GlitchText>
         <GlitchText settings={glitchTextSettings}>Custom</GlitchText>
+        <TypewriterText settings={{ background: '#bfe7ff'}}>Typewriter Text</TypewriterText>
+        <TypewriterText settings={typewriterTextSettings}></TypewriterText>
       </section>
     </div>
   );
