@@ -9,10 +9,6 @@ import TypewriterText from './TextEffect/TypewriterText/TypewriterText';
 import SamuraiText from './TextEffect/SamuraiText/SamuraiText';
 // import image from './Assets/Images/JWSTHD.jpg';
 
-// TODO: Update settings import for all components.
-//  Should initialize values on object creation and not require a special function
-//  This is cleaner, probably faster, and much easier to read.
-
 function App() {
 
   // Quick colorway settings if you don't want to think of any
