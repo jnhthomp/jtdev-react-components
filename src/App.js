@@ -15,18 +15,26 @@ import SamuraiText from './TextEffect/SamuraiText/SamuraiText';
 
 function App() {
 
+  // Quick colorway settings if you don't want to think of any
+  // https://colorkit.co/color-palette-generator/15114f-4a5acc-e859c7-93dbe2-ff2200/
+  const primaryDark = '#15114f'
+  const primaryLight = '#4a5acc'
+  const accentDark = '#e859c7'
+  const accentLight = '#93dbe2'
+  const accentAlt = '#ff2200'
+
   // Neon Button example settings
   const neonButtonSettings = {
-    color: '#7deddc',
-    colorBg: `#007ba7`,
+    color: accentLight,
+    colorBg: primaryLight,
     fontSize: '3rem',
     transitionSpeed: 500,
     clickAction: () => console.log('Custom Click')
   }
 
   const neonButtonAnimatedSettings = { 
-    colorPrimary: '#ef3e9c', 
-    colorSecondary: '#aaffb8',
+    colorPrimary: accentDark, 
+    colorSecondary: primaryDark,
     fontSize: '16px',
     transitionSpeed: .5,
     clickAction: () => console.log('Custom click')
@@ -35,10 +43,11 @@ function App() {
   // Glow Bar loader example settings
   // Replace GlowBar settings prop with this object to see customization examples
   const glowBarSettings = {
-    loaderColors: ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'], // list of colors as strings 
-    loaderColorsRepeat: 1, // increase number to make color sections smaller
-    loaderColorSize: 200, // Higher number makes each section larger
-    animationSpeed: 10, //Time in seconds to complete one full animation
+    // loaderColors: ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'], // list of colors as strings 
+    loaderColors: [primaryDark, primaryLight, accentDark, accentLight, accentAlt],
+    loaderColorsRepeat: 2, // increase number to make color sections smaller
+    loaderColorSize: 100, // Higher number makes each section larger
+    animationSpeed: 15, //Time in seconds to complete one full animation
     height: 15, // height (in px) of the bar
     blurSize: 20 // larger number gives larger blur
   }
@@ -68,22 +77,22 @@ function App() {
     label: 'first name',
     textTransform: 'uppercase',
     width: '300px',
-    colorBackground: '#79b4f5', // Not needed but recommended or label text will default to white when focused
-    colorAccent: '#c1e463',
-    colorMain: '#8bc0d0',
-    colorText: '#9dccac',
+    colorBackground: primaryDark, // Not needed but recommended or label text will default to white when focused
+    colorAccent: accentLight,
+    colorMain: primaryLight,
+    colorText: accentDark,
     animationSpeed: 1,
     labelSpacing: '.4em',
     useAltTheme: true
   }
 
   const glitchTextSettings = {
-    color: 'white',
+    color: primaryDark,
     fontSize: '6rem',
     fontWeight: 500,
-    rColor: 'rgba(146, 0, 134, .75)', // .75 opacity recommended but not required
-    gColor: 'rgba(183, 253, 227, .75)', // .75 opacity recommended but not required
-    bColor: 'rgba(50, 70, 146, .75)', // .75 opacity recommended but not required
+    rColor: accentDark + '7b', // ~.75 opacity recommended but not required
+    gColor: accentAlt + '7b', // ~.75 opacity recommended but not required
+    bColor: primaryLight + '7b' // ~.75 opacity recommended but not required
   }
 
   const typewriterTextSettings = {
@@ -96,8 +105,8 @@ function App() {
     // !  To specify a downloadable font include the link in your index.html file
     titleFont: '\'Roboto Mono\', monospace', 
     subtitleFont: '\'Montserrat\', sans-serif',
-    titleColor: '#ab80a7',
-    subtitleColor: 'rgba(234, 163, 130, .75)',
+    titleColor: primaryDark,
+    subtitleColor: accentDark + '7a',
     titleWeight: 200,
     subtitleWeight: 100,
     titleFontSize: '4rem',
@@ -111,10 +120,10 @@ function App() {
   }
 
   const samuraiTextSettings = {
-    color: 'white',
+    color: primaryDark,
     fontSize: '4rem',
     fontWeight: '500',
-    sliceColor: 'red',
+    sliceColor: accentDark,
     sliceLength: '5%',
     sliceTime: 1000,
     sliceDelay: 500
