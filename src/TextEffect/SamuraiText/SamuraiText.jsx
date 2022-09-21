@@ -1,4 +1,3 @@
-import { sliderClasses } from '@mui/material'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 

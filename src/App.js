@@ -7,7 +7,6 @@ import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
 import TypewriterText from './TextEffect/TypewriterText/TypewriterText';
 import SamuraiText from './TextEffect/SamuraiText/SamuraiText';
-import { withTheme } from 'styled-components';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 // TODO: Update settings import for all components.
