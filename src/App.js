@@ -6,6 +6,8 @@ import NeonButton from './Button/NeonButton/NeonButton';
 import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
 import TypewriterText from './TextEffect/TypewriterText/TypewriterText';
+import SamuraiText from './TextEffect/SamuraiText/SamuraiText';
+import { withTheme } from 'styled-components';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 // TODO: Update settings import for all components.
@@ -108,6 +110,16 @@ function App() {
     background: '#bfe7ff', // !required property unless using white background
     // caretColor: 'white' // Recommend to not use to match text color but wanted to give the option
   }
+
+  const samuraiTextSettings = {
+    color: 'white',
+    fontSize: '4rem',
+    fontWeight: '500',
+    sliceColor: 'red',
+    sliceLength: '5%',
+    sliceTime: 1000,
+    sliceDelay: 500
+  }
   
   return (
     <div className="App">
@@ -140,6 +152,8 @@ function App() {
         <GlitchText settings={glitchTextSettings}>Custom</GlitchText>
         <TypewriterText settings={{ background: '#bfe7ff'}}>Typewriter Text</TypewriterText>
         <TypewriterText settings={typewriterTextSettings}></TypewriterText>
+        <SamuraiText settings={{}}>Samurai Text</SamuraiText>
+        <SamuraiText settings={samuraiTextSettings}>Nani?</SamuraiText>
       </section>
     </div>
   );
