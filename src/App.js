@@ -1,5 +1,6 @@
 import classes from './App.module.css';
 import GlowBar from './Loading/GlowBar/GlowBar.jsx';
+import BasicForm from './Form/BasicForm/BasicForm';
 import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
 import NeonButton from './Button/NeonButton/NeonButton';
@@ -66,6 +67,73 @@ function App() {
     // cardButtonPrimaryColor: '', // set to match accentColor if no value given
     cardButtonSecondaryColor: '#25cf51',
     buttonAction: () => console.log('Custom click')
+  }
+
+  const basicFormSettings = {
+    inputList: [
+      {
+        validation: (value) => value.trim() !== '',
+        type: 'text',
+        label: 'First Name',
+        id: 'fName', //! id must be provided for each item when providing an input list
+        errorText: 'First name cannot be blank',
+        value: '' // Initial values can be passed in if desired (for update forms)
+      },
+      {
+        validation: (value) => value.trim() !== '',
+        type: 'text',
+        label: 'Last Name',
+        id: 'lName',
+        errorText: 'Last name cannot be blank',
+        value: ''
+      },
+      {
+        validation: (value) => value.includes('@'),
+        type: 'text',
+        label: 'Email',
+        id: 'email',
+        errorText: 'Please use a valid email format',
+        value: ''
+      },
+      {
+        validation: (value) => value.trim() !== '',
+        type: 'password',
+        label: 'Password',
+        id: 'password',
+        errorText: 'Please enter your password',
+        value: ''
+      }
+    ],
+
+    //! Required: A method to call when the form is submitted
+    formSubmit: (inputs) => { console.log(inputs) },
+
+    buttonText: 'Register', // Option button text ('Submit' by default)
+    // Theme object and all properties within are optional
+    theme: {
+      cardBGColor: primaryDark,
+      labelWeight: 500,
+      textColor: primaryLight,
+      inputTextColor: accentDark,
+      inputBorderColor: accentLight,
+      inputBGColor: primaryLight,
+      inputFocusBorder: accentDark,
+      inputFocusGBColor: accentLight,
+      invalidTextColor: accentAlt,
+      invalidBorderColor: accentAlt,
+      invalidBGColor: accentLight,
+      invalidFocusBorder: accentAlt + '6b',
+      invalidFocusBG: accentDark + '3b',
+      errorTextColor: accentAlt,
+      buttonBGColor: accentDark,
+      buttonTextColor: accentLight,
+      buttonBorderColor: primaryLight,
+      buttonHoverBG: accentDark + 'da',
+      buttonHoverBorder: accentDark + 'da',
+      buttonDisabledBG: accentLight,
+      buttonDisabledTextColor: primaryDark,
+      buttonDisabledBorder: accentDark
+    }
   }
 
   const animatedInputSettings = {
@@ -147,6 +215,8 @@ function App() {
       </section>
       <section className={`${classes.sectionContainer} ${classes.formsSection}`}>
         <h1>Forms and Input</h1>
+        <BasicForm settings={{ formSubmit: basicFormSettings.formSubmit }}/>
+        <BasicForm settings={basicFormSettings} />
         <AnimatedInput settings={{}}/>
         <AnimatedInput settings={animatedInputSettings} />
       </section>
