@@ -19,6 +19,7 @@ This is a React application that utilizes Styled Components to apply dynamic sty
 
 ## Optimizations
 - Use theme provider to supply custom values as an alternative to a settings object. This should reduce code duplication when using multiple components in an app and make plug/play easier for applications already using Theme Provider.
+- Update to an npm package. This would allow it to be installed and called in other projects more easily instead of having to copy/paste the component directory. See link for more details: https://medium.com/@dave.draper20/exporting-react-components-in-npm-e077606073bb
 
 ## Lessons Learned
 - Many CSS tips and tricks within each component such as animations, sizing, and responsiveness.
