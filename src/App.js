@@ -50,7 +50,7 @@ function App() {
   }
 
   const fullImageCardSettings = {
-    backgroundImage: '/JWSTHD.jpg',
+    backgroundImage: '/Assets/Images/JWSTHD.jpg',
     maxWidth: '38ch',
     animationSpeed: '900ms', // time unit must be provided, ms recommended
     scaleUp: 1.25,
