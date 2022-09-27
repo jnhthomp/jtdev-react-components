@@ -26,6 +26,15 @@
   background-color: hsl(207, 19%, 9%);
 }
 
+.cardSection > .backgroundContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  padding: 2rem;
+  background-image: url('../public/Assets/Images/JWSTHD.jpg');
+}
+
 
 .formsSection {
   color: white;

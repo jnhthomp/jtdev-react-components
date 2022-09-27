@@ -3,6 +3,7 @@ import GlowBar from './Loading/GlowBar/GlowBar.jsx';
 import BasicForm from './Form/BasicForm/BasicForm';
 import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
+import ProfileCard from './Card/ProfileCard/ProfileCard';
 import NeonButton from './Button/NeonButton/NeonButton';
 import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
@@ -67,6 +68,55 @@ function App() {
     // cardButtonPrimaryColor: '', // set to match accentColor if no value given
     cardButtonSecondaryColor: '#25cf51',
     buttonAction: () => console.log('Custom click')
+  }
+
+  const ProfileCardSettings = {
+    cardBackgroundColor: primaryDark + '33', // Add opacity to achieve glass effect
+    cardBlurLevel: 100, // higher number = more blur; default is 5. If on a solid background then it won't look blurred. Consider wrapping in a div with a background image that doesn't extend past the card
+    // defaultTextColor: accentLight, // Single color to apply over all text except button which defaults to white
+    // Text colors also individually addressable
+    titleColor: accentLight,
+    subtitleColor: accentLight,
+    mapPinColor: accentDark,
+    mapTextColor: accentDark,
+    infoDataColor: accentLight,
+    infoLabelColor: accentDark,
+    btnPrimaryColor: accentLight,
+    btnPrimaryTextColor: accentDark, // default to white if no value given
+    btnSecondaryColor: accentDark,
+    btnSecondaryTextColor: accentLight, // default to white if no value given
+    data: {
+      imagePath: '/Assets/Images/JWSTHD.jpg', // img path relative from public folder
+      title: 'Jonah Thompson',
+      subtitle: 'Full Stack Web Developer',
+      location: 'Mos Eisley, Tatooine',
+      info: [
+        // 3 suggested but will wrap however many you add (can be omitted entirely)
+        { data: '999', title: 'Followers' },
+        { data: '999', title: 'Commits' },
+        { data: '99', title: 'Repos' }
+      ],
+      social: [
+        // < 5 max suggested but will wrap however many you add (can be omitted entirely)
+        // Unknown networks will default to a link image
+        { type: 'linkedin', link: 'https://linkedin.com' },
+        { type: 'twitter', link: 'https://twitter.com' },
+        { type: 'instagram', link: 'https://instagram.com' },
+        { type: 'github', link: 'https://github.com' }
+        // { type: 'behance', link: 'https://behance.com' },
+      ],
+      btnPrimary: {
+        text: 'Primary',
+        action: () => {
+          console.log('btnPrimary clicked')
+        }
+      },
+
+      btnSecondary: {
+        text: 'Secondary',
+        action: () => console.log('btnSecondary clicked')
+      }
+    }
   }
 
   const basicFormSettings = {
@@ -210,8 +260,12 @@ function App() {
       </section>
       <section className={`${classes.sectionContainer} ${classes.cardSection}`}>
         <FullImageCard settings={{}}/>
-        <FullImageCard settings={fullImageCardSettings}
-        />
+        <FullImageCard settings={fullImageCardSettings}/>
+        <div className={classes.backgroundContainer}> 
+          {/* Apply non-solid background over these for blur effect to work (image or gradient) */}
+          <ProfileCard settings={{}} />
+          <ProfileCard settings={ProfileCardSettings} />
+        </div>
       </section>
       <section className={`${classes.sectionContainer} ${classes.formsSection}`}>
         <h1>Forms and Input</h1>
