@@ -76,7 +76,6 @@ const Container = styled.div`
 
 const TypewriterText = (props) => {
   const finalSettings ={
-    // TODO: Set showSubtitle default value to false when complete
     titleContent: props.children || props.settings.titleContent,
     showSubtitle: props.settings.showSubtitle || false,
     subtitleContent: props.settings.subtitleContent || 'Lorem ipsum dolor sit amet',
