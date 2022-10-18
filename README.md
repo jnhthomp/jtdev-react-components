@@ -1,5 +1,5 @@
 # JTDev Component Library
-<a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://jtdev-asset-server.herokuapp.com/assets/images/JTDEV-MDHead.png" alt="JTDEV" width="100%" height="auto"/> </a>
+<a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://jtdev-asset-server.herokuapp.com/assets/logos/png/logo-color.png" alt="JTDEV" width="100%" height="auto"/> </a>
 This application was created to act as a library of customizable and reusable components. As I build applications and find interesting components I will continue to add them to this project. As more components are added this will speed up development of unique looking apps as I will be able to simply drop these components into an application and use React context or a theme engine to quickly change the look of all components at once.
 
 <!-- Application gif -->
