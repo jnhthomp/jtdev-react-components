@@ -9,6 +9,7 @@ import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
 import TypewriterText from './TextEffect/TypewriterText/TypewriterText';
 import SamuraiText from './TextEffect/SamuraiText/SamuraiText';
+import Navbar from './Navigation/Navbar';
 // import image from './Assets/Images/JWSTHD.jpg';
 
 function App() {
@@ -20,6 +21,25 @@ function App() {
   const accentDark = '#e859c7'
   const accentLight = '#93dbe2'
   const accentAlt = '#ff2200'
+
+  // Navbar example settings
+  const navbarSettings = {
+    backgroundColor: '#073B4C',
+    bottomBorderColor:  '#FFD166',
+    bottomBorderHeight:  '8px',
+    textFontFamily: 'Gill Sans',
+    textPrimaryWeight: '200',
+    textPrimarySize: '2rem',
+    textPrimaryColor: '#118AB2',
+    textHoverColor:  '#06D6A0',
+    textActiveColor: '#EF476F',
+    menuIconColor: '#FFD166',
+    menuItems: [
+      { name: 'Custom', navTo: '#first' },
+      { name: 'Navbar', navTo: '#second' },
+      { name: 'Component', navTo: '#third' }
+    ]
+  }
 
   // Neon Button example settings
   const neonButtonSettings = {
@@ -245,6 +265,10 @@ function App() {
   
   return (
     <div className="App">
+      <section className={`${classes.sectionContainer} ${classes.navSection}`}>
+        <Navbar settings={{}}/>
+        <Navbar settings={navbarSettings} />
+      </section>
       <section className={`${classes.sectionContainer} ${classes.buttonSection}`}>
         <NeonButton settings={{}}>Text</NeonButton>
         <br></br>
