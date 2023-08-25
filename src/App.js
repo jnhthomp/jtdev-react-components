@@ -4,6 +4,7 @@ import BasicForm from './Form/BasicForm/BasicForm';
 import AnimatedInput from './Form/AnimatedInput/AnimatedInput';
 import FullImageCard from './Card/FullImageCard/FullImageCard';
 import ProfileCard from './Card/ProfileCard/ProfileCard';
+import CardHoverDuplicateFade from './Card/CardHoverDuplicateFade/CardHoverDuplicateFade';
 import NeonButton from './Button/NeonButton/NeonButton';
 import NeonButtonAnimated from './Button/NeonButtonAnimated/NeonButtonAnimated';
 import GlitchText from './TextEffect/GlitchText/GlitchText';
@@ -139,6 +140,21 @@ function App() {
     }
   }
 
+  const cardHoverDuplicateSettings = {
+    cards: [
+      { dataColor: 'rgb(10, 117, 170, .9)', src: 'https://sceneprints.com/cdn/shop/products/IS_2a24ef2e-f8ca-4a2f-92bb-b0bf773e1f88.jpg?v=1645837528' },
+      { dataColor: 'rgb(39, 146, 51, .9)', src: 'https://i.etsystatic.com/16821137/r/il/48c232/3956514061/il_570xN.3956514061_ffgi.jpg' },
+      { dataColor: 'rgb(156, 0, 19, .9)', src: 'https://sothebys-md.brightspotcdn.com/3d/72/7c952f1a4d09b0b7ba1693b00e9b/lot-151-posters-1.jpg' }
+    ],
+    paddingL: '5%', // add padding to help center component doesn't always play nicely due to different image sizes and aspect ratios supported
+    // containerBackgroundColor: '#2E67F8',
+    containerBgTransitionSpeed: 1.5,
+    imageBorderRadius: '5px',
+    imageBackgroundColor: 'hsl(207, 19%, 9%, 1)', // Only needed when image has a transparent background. Can get weird without it.
+    animationTime: 10, // How quickly or slowly the images will move. Higher is slower, lower is faster.
+    animationSpread: 40// How far will the animated cards spread from the original card use a number, it will be converted to a percentage.
+  }
+
   const basicFormSettings = {
     inputList: [
       {
@@ -262,7 +278,7 @@ function App() {
     sliceTime: 1000,
     sliceDelay: 500
   }
-  
+
   return (
     <div className="App">
       <section className={`${classes.sectionContainer} ${classes.navSection}`}>
@@ -290,6 +306,14 @@ function App() {
           <ProfileCard settings={{}} />
           <ProfileCard settings={ProfileCardSettings} />
         </div>
+        {/* Use a container to set a width/height */}
+        <div className={classes.chdContainer} >
+          <CardHoverDuplicateFade settings={{}} />
+        </div>
+        <div className={classes.chdContainer} >
+          {/* Use a container to set a width/height */}
+          <CardHoverDuplicateFade settings={cardHoverDuplicateSettings} />
+        </div>
       </section>
       <section className={`${classes.sectionContainer} ${classes.formsSection}`}>
         <h1>Forms and Input</h1>
@@ -312,3 +336,7 @@ function App() {
 }
 
 export default App;
+
+// Notes and TODOS:
+// - Transfer skills card show/hide component from react portfolio and make reusable
+// - Transform application to npm package with react example preview (see readme for instructions)

@@ -39,6 +39,10 @@
   background-image: url('../public/Assets/Images/JWSTHD.jpg');
 }
 
+.cardSection .chdContainer {
+  height: 400px;
+  width: 80%;
+}
 
 .formsSection {
   color: white;
